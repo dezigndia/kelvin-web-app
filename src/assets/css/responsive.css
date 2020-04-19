@@ -1,0 +1,9 @@
+/*media*/
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media all and (max-width: 1200px) and (min-width: 320px) { 
+	#bg_grad 
+	{
+	  height: 125vh;
+	}
+}

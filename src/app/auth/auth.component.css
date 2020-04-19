@@ -1,0 +1,8 @@
+#bg_grad 
+  {
+    background-image: linear-gradient(to right, #12dab6 , #7d48de), url('../../assets/images/login/bg.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+    /*background: transparent url('../images/login/bg.png') 0% 0% no-repeat padding-box;*/
+    /*opacity: 0.1;*/
+  }

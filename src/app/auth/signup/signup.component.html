@@ -4,25 +4,42 @@
 						<h3 class="text-center m-auto d-block">HYPER<span>APP</span></h3>
 					</div>
 					<div class="input_hight">
-						<form>
+						<form [formGroup]="signUpForm">
 							<div class="input-container">
 								<i class="fa fa-user icon"></i>
-								<input type="text" name="name" placeholder="Set Your Username">
+								<input class="input-control" type="text" name="username" placeholder="Set Your Username" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+								<div *ngIf="submitted && f.username.errors" class="invalid-feedback row">
+									<div *ngIf="f.username.errors.required">UserName is required</div>
+									<div *ngIf="f.password.errors.minlength">Username should be minimum 4 digit</div>
+								</div>
 							</div>
+
 							<div class="input-container">
 								<i class="fa fa-lock icon"></i>
-								<input type="password" name="password" placeholder="Set Your Password">
+								<input type="password" name="password" placeholder="Set Your Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+								<div *ngIf="submitted && f.password.errors" class="invalid-feedback row">
+									<div *ngIf="f.password.errors.required">password is required</div>
+									<div *ngIf="f.password.errors.minlength">password should be minimum 8 digit</div>
+								</div>
 							</div>
 							<div class="input-container">
 								<i class="fa fa-envelope-open-o icon"></i>
-								<input type="password" name="password" placeholder="Your Email">
+								<input type="text" name="phone" placeholder="Your Contact" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+								<div *ngIf="submitted && f.phone.errors" class="invalid-feedback row">
+									<div *ngIf="f.phone.errors.required">phone is required</div>
+									<div *ngIf="f.phone.errors.minlength">phone should be minimum 10 digit</div>
+									<div *ngIf="f.phone.errors.maxlength">phone should be maximum 15 digit</div>
+								</div>
 							</div>
 							<div class="input-container">
 								<i class="fa fa-pencil icon"></i>
-								<input type="password" name="password" placeholder="Full Name">
+								<input type="text" name="name" placeholder="Full Name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+								<div *ngIf="submitted && f.name.errors" class="invalid-feedback row">
+									<div *ngIf="f.name.errors.required">name is required</div>
+								</div>
 							</div>
 						</form>
-						<button class="text-center btn rigester_btnbg rigester_btn mt-3">SIGN UP</button>
+						<button class="text-center btn rigester_btnbg rigester_btn mt-3" (click)="onSignUp()">SIGN UP</button>
 						<div class="newmember mt-5">
 							<p>Already Member ? <a [routerLink]="['/login']"> LOG IN</a></p>
 						</div>

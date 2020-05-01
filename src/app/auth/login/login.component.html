@@ -4,18 +4,24 @@
 						<h3 class="text-center m-auto d-block">HYPER<span>APP</span></h3>
 					</div>
 					<div class="input_hight">
-						<form>
+						<form [formGroup]="loginForm">
 							<div class="input-container">
 								<i class="fa fa-user icon"></i>
-								<input type="text" name="name" placeholder="Username" required>
+								<input type="text"  placeholder="Username" required formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+								<div *ngIf="submitted && f.username.errors" class="invalid-feedback row">
+									<div *ngIf="f.username.errors.required">Username is required</div>
+								</div>
 							</div>
 							<div class="input-container">
 								<i class="fa fa-lock icon"></i>
-								<input type="password" name="password" placeholder="Password" required>
+								<input type="password" placeholder="Password" required formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+								<div *ngIf="submitted && f.password.errors" class="invalid-feedback row">
+									<div *ngIf="f.password.errors.required">Password is required</div>
+								</div>
 							</div>
 						</form>
 						<!--<button class="text-center btn login_btnbg login_btn mt-3">SIGN IN</button>-->
-						<a href="https://hyperapp.dezigndia.com/dashboard.html"class="text-center btn login_btnbg login_btn mt-3">SIGN IN</a>
+						<button class="text-center btn login_btnbg login_btn mt-3" (click)="onLogin()">SIGN IN</button>
 						<div class="newmember mt-5">
 							<p>New Member ? <a [routerLink]="['/signup']"> SIGN UP</a></p>
 						</div>

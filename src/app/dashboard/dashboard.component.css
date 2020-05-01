@@ -1,0 +1,348 @@
+
+/*header css start*/
+.h_app {
+    width: 100%;
+    min-height: 100%;
+    background-color: #f6f7f9;
+    overflow-x: hidden;
+}
+.h_app-header-dark {
+    /*background-color: #346cb0;*/
+    background: transparent linear-gradient(90deg, #2C1782 0%, #2E9DFF 100%) 0% 0% no-repeat padding-box;
+    color: hsla(0,0%,100%,.8);
+}
+.h_app-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3.5rem;
+    z-index: 1030;
+    box-shadow: 0 0 0 1px rgba(20,20,31,.05), 0 1px 3px 0 rgba(20,20,31,.15);
+}
+.top-bar {
+    display: flex;
+    width: 100%;
+    height: 3.5rem;
+    align-items: stretch;
+}
+.top-bar-brand {
+    padding: 10px 0px 0px 30px;
+}
+
+.top-bar-brand > a {
+    padding: 5px 0px 0px 5px;
+}
+.hamburger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    cursor: pointer;
+    height: 2.25rem;
+    width: 2.25rem;
+    transition: background-color .3s linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: .25rem;
+    margin: 0;
+    overflow: visible;
+    outline: 0;
+}
+
+.hamburger-box {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    position: relative;
+}
+.hamburger-squeeze .hamburger-inner {
+    transition-duration: 75ms;
+    transition-timing-function: cubic-bezier(.55,.055,.675,.19);
+}
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    width: 1.25rem;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: .15s;
+    transition-timing-function: ease;
+}
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -1px;
+}
+.hamburger-squeeze .hamburger-inner:before {
+    transition: top 75ms ease .12s,opacity 75ms ease;
+}
+.hamburger-inner:before {
+    top: -6px;
+}
+
+.hamburger-inner:after, .hamburger-inner:before {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    width: 1.25rem;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: .15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-squeeze .hamburger-inner:after {
+    transition: bottom 75ms ease .12s,transform 75ms cubic-bezier(.55,.055,.675,.19);
+}
+
+.hamburger-inner:after {
+    bottom: -6px;
+}
+
+.hamburger-inner:after, .hamburger-inner:before {
+    content: "";
+    display: block;
+}
+/*header css end*/
+/*side bar css start*/
+
+.app-aside {
+    color: inherit;
+    background-color: #f6f7f9;
+}
+
+.app-aside-expand-md {
+    top: auto;
+    transform: translateZ(0);
+    z-index: 1030;
+}
+
+.app-aside {
+    position: absolute;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    width: calc(100vw - 3.5rem);
+    max-width: 16.5rem;
+    z-index: 1050;
+    /*transform: translate3d(-100%,0,0);*/
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform .2s ease-in-out;
+    box-shadow: 0px 3px 6px #00000029;
+}
+.app-aside-light .aside-header, .app-aside-light .aside-header .welcome-account[aria-expanded=true]:before, .app-aside .dropdown-aside {
+    background-color: #fff;
+}
+
+.aside-header .welcome-account {
+    padding: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.welcome .welcome-summary {
+    margin-right: .75rem;
+    display: block;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+    padding: 30px;
+    text-align: center;
+}
+
+.aside-header .welcome-account .welcome-name {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+.aside-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.app-aside .aside-header, .app-aside .aside-header .btn-account[aria-expanded=true]:before, .app-aside .dropdown-aside {
+    background-color: #fff;
+}
+
+.aside-menu {
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.ps {
+    overflow: hidden!important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+.overflow-hidden {
+    overflow: hidden!important;
+}
+
+.stacked-menu {
+    padding-top: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.stacked-menu {
+    position: relative;
+    padding: .25rem 0;
+    background-color: transparent;
+}
+
+.stacked-menu ul.menu {
+    display: block;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.stacked-menu .menu-link, .stacked-menu .menu-subhead {
+    padding-right: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.stacked-menu .menu-link {
+    position: relative;
+    display: block;
+    color: #888c9b;
+    text-decoration: none;
+}
+
+.stacked-menu .menu-link, .stacked-menu .menu-subhead {
+    padding: .5rem 1rem;
+    font-size: .875rem;
+    line-height: 1.75em;
+    overflow: hidden;
+}
+
+.menu_border
+{
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 6px #00000029;
+	opacity: 1;
+	margin-bottom: 1%;
+	padding: 8px;
+}
+span.dot {
+    float: right;
+}
+span.welcome-name.text-center {
+    color: #2C1782;
+}
+
+.addnew_btn
+{
+margin-top: 10%;
+margin-left: 16%;
+width: 158px;
+/*height: 29px;*/
+}
+
+.addnewbtn
+{
+	text-align: center;
+	font: Medium 20px/27px Ubuntu;
+	letter-spacing: 0px;
+	color: #FFFFFF;
+	text-shadow: 0px 3px 6px #00000029;
+	opacity: 1;
+	background: transparent linear-gradient(0deg, #2C1782 0%, #2E9DFF 100%) 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border-radius: 30px;
+}
+.logout
+{
+	color :#2C1782;
+	font-size: 15px;
+}
+/*side bar css end*/
+
+
+/*middle part start*/
+
+.app-main {
+    position: relative;
+    padding-top: 3.5rem;
+    padding-right: 0;
+    padding-left: 0;
+    overflow: hidden;
+}
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+.top_breack
+{
+    margin-top: 0%;
+    margin-left: -3%;
+    width: 1125px;
+
+}
+.top_shadow
+{
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+opacity: 1;
+}
+
+.breack_btn
+{
+margin-top: 0%;
+margin-left: 0;
+width: 16%;
+height: 38px;
+}
+.breackbtn{
+background: #2E9DFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+ border-radius: 0px 15px 15px 0px;
+opacity: 1;
+}
+i.fa.fa-times {
+    position: absolute;
+    margin-left: -3%;
+    margin-top: 1%;
+    color: #fff;
+}
+
+.welcome-_note h5
+{
+	text-align: center;
+	font: Regular 100px/61px Montserrat;
+	letter-spacing: 0px;
+	color: #2C1782;
+	font-size: 47px;
+    font-weight: normal;
+}
+
+.welcome-_note p
+{
+	text-align: center;
+	font: Regular 100px/61px Montserrat;
+	letter-spacing: 0px;
+	color: #2C1782;
+	font-size: 24px;
+    font-weight: normal;
+}
+/*middle part end*/

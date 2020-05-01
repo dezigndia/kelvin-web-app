@@ -1,0 +1,75 @@
+<div class="h_app">
+    <!-- .app-header -->
+    <header class="h_app-header h_app-header-dark">
+        <!-- .top-bar -->
+        <div class="top-bar">
+            <!-- .top-bar-brand -->
+            <div class="top-bar-brand row">
+                <!-- toggle aside menu -->
+                <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside-menu" aria-label="toggle aside menu"><span class="hamburger-box"><span class="hamburger-inner"></span></span>
+                </button>
+                <!-- /toggle aside menu -->
+                <a href="#">
+                    <img class="das_logo" src="assets/images/logo.png">
+                </a>
+            </div>
+            
+        </div>
+        <!-- /.top-bar -->
+    </header>
+    <!-- /.app-header -->
+    <!-- .app-aside -->
+    <aside class="app-aside app-aside-expand-md app-aside">
+        <!-- .aside-content -->
+        <div class="aside-content">
+            <!-- .aside-header -->
+            <header class="aside-header d-block ">
+                <!-- .btn-account -->
+                <div class="welcome">
+                  <span class="welcome-summary">
+                    <span class="welcome-name text-center">Hi Jessica <br> Welcome Back</span>
+                  </span>
+                </div>
+                
+            </header>
+            <!-- /.aside-header -->
+            <!-- .aside-menu -->
+            <div class="aside-menu overflow-hidden ps ps--active-y">
+                <!-- .stacked-menu -->
+                <nav id="stacked-menu" class="stacked-menu stacked-menu-has-collapsible">
+                    <!-- <app-site-list [sitelist]="sitelist"></app-site-list> -->
+                    <ul class="menu">
+                        <app-site-list [sitelist]="sitelist"></app-site-list>
+                        <div class="input-group mb-3" *ngIf="addSite">
+                            <input type="text" class="form-control" placeholder="Enter Site url" aria-label="Recipient's username" aria-describedby="basic-addon2" #site>
+                            <div class="input-group-append">
+                              <span class="input-group-text" id="basic-addon2" (click)="addNewSite(site.value)">ADD</span>
+                            </div>
+                          </div>
+
+                        <button class="btn btn-primary addnew_btn addnewbtn text-center" (click)="addSite = !addSite">Add New Site</button>
+                        <li class="menu-item mt-3 text-center">
+                            <a href="#" class="menu-link">
+                              <span class="menu-text logout" (click)="onLogout()">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.stacked-menu -->
+            </div>
+            <!-- /.aside-menu -->
+            <footer class="aside-footer border-top p-2 text-center">
+                  <span class="d-compact-menu-none">Help & Support</span><br>
+                  <span class="d-compact-menu-none">Privacy & policies</span><br>
+                  <span class="d-compact-menu-none">Trems & conditions</span> 
+            </footer>
+
+        </div>
+        <!-- /.aside-content -->
+    </aside>
+    <!-- /.app-aside -->
+
+   
+    <!-- /.app-main -->
+    <div class="aside-backdrop"></div>
+</div>
